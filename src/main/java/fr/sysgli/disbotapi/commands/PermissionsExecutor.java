@@ -31,20 +31,26 @@ public class PermissionsExecutor extends CommandExecutor {
 
 		DiscordUser targetUser = getDisbot().getUserManager().getDiscordUser(guild, mentionedUsers.get(0));
 		String name = DisbotUtils.getNameForUser(guild, targetUser.getUser());
-		
+
 		if(args[1].replaceFirst("@", "").equals(name)) {
 			switch(args[0]) {
 			case "add":
 				if(args.length < 3)
 					return false;
-				targetUser.addPermission(args[2]);
-				channel.sendMessage("Permission \"" + args[2] + "\" ajoutée à " + name + ".");
+				if(!targetUser.hasPermission(args[2])) {
+					targetUser.addPermission(args[2]);
+					channel.sendMessage("Permission \"" + args[2] + "\" ajoutée à " + name + ".");
+				} else
+					channel.sendMessage(name + " possède déjà la permission \"" + args[2] + "\".");
 				break;
 			case "remove":
 				if(args.length < 3)
 					return false;
-				targetUser.removePermission(args[2]);
-				channel.sendMessage("Permission \"" + args[2] + "\" retirée à " + name + ".");
+				if(targetUser.hasPermission(args[2])) {
+					targetUser.removePermission(args[2]);
+					channel.sendMessage("Permission \"" + args[2] + "\" retirée à " + name + ".");
+				} else
+					channel.sendMessage(name + " ne possède pas la permission \"" + args[2] + "\".");
 				break;
 			case "clear":
 				targetUser.clearPermissions();
@@ -54,7 +60,7 @@ public class PermissionsExecutor extends CommandExecutor {
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 

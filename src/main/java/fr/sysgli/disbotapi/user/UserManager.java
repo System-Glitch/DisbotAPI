@@ -69,6 +69,22 @@ public final class UserManager {
 			DiscordGuild discordGuild = registerGuild(guild , dir);
 			scanUsers(discordGuild);
 		}
+		deleteUnconnectedGuilds();
+	}
+	
+	private void deleteUnconnectedGuilds() {
+		for(File f : guildsDir.listFiles()) {
+			if(f.isDirectory() && !containsGuild(f.getName()))
+				deleteGuild(f);
+		}
+	}
+	
+	private boolean containsGuild(String guildID) {
+		for(DiscordGuild guild : guilds.values()) {
+			if(guild.getGuild().getId().equals(guildID))
+				return true;
+		}
+		return false;
 	}
 
 	private void scanUsers(DiscordGuild guild) {
@@ -85,6 +101,40 @@ public final class UserManager {
 		DiscordGuild discordGuild = new DiscordGuild(guild , dir);
 		guilds.put(guild.getId(), discordGuild);
 		return discordGuild;
+	}
+	
+	protected void scanGuild(Guild guild) {
+		String id = guild.getId();
+		File dir = new File("disbot/guilds/" + id);
+		boolean ok = false;
+		for(File file : guildsDir.listFiles())
+			if(file.getName().equals(id)) {
+				ok = true;
+				break;
+			}					
+		if(!ok) {
+			Logger_.info("Unknown guild : " + guild.getName() + ". Creating a fresh directory.");
+			dir.mkdir();
+		}
+		DiscordGuild discordGuild = registerGuild(guild , dir);
+		scanUsers(discordGuild);
+	}
+	
+	protected void deleteGuild(Guild guild) {
+		Logger_.info("Deleting guild files : " + guild.getName());
+		DiscordGuild discordGuild = guilds.get(guild.getId());
+		File dir = discordGuild.getDirectory();
+		for(File f : dir.listFiles())
+			f.delete();
+		dir.delete();
+		guilds.remove(guild.getId());
+	}
+	
+	private void deleteGuild(File guildDir) {
+		Logger_.info("Deleting unused guild files : " + guildDir.getName());
+		for(File f : guildDir.listFiles())
+			f.delete();
+		guildDir.delete();
 	}
 
 	/**

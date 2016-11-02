@@ -59,6 +59,50 @@ public final class UserData implements Serializable {
 	}
 	
 	/**
+	 * Stores the value with the identifier key as a byte.
+	 * @param key
+	 * @param value
+	 */
+	public void setByte(String key , byte value) {
+		data.put(key, String.valueOf(value));
+	}
+	
+	/**
+	 * Returns the int associated with the key or -1 if the key doesn't exists.<br>
+	 * <b>Be sure that the associated value IS a byte or an exception will be thrown!</b>
+	 * @param key
+	 * @return byte value
+	 */
+	public byte getByte(String key) {
+		String value = data.get(key);
+		if(value == null)
+			return -1;
+		return Byte.parseByte(value);
+	}
+	
+	/**
+	 * Stores the value with the identifier key as a short.
+	 * @param key
+	 * @param value
+	 */
+	public void setShort(String key , short value) {
+		data.put(key, String.valueOf(value));
+	}
+	
+	/**
+	 * Returns the int associated with the key or -1 if the key doesn't exists.<br>
+	 * <b>Be sure that the associated value IS a short or an exception will be thrown!</b>
+	 * @param key
+	 * @return short value
+	 */
+	public short getShort(String key) {
+		String value = data.get(key);
+		if(value == null)
+			return -1;
+		return Short.parseShort(value);
+	}
+	
+	/**
 	 * Stores the value with the identifier key as an int.
 	 * @param key
 	 * @param value
@@ -148,6 +192,23 @@ public final class UserData implements Serializable {
 	
 	HashMap<String , String> getData() {
 		return data;
+	}
+	
+	/**
+	 * Returns if a value is associated to the specified key.
+	 * @param key
+	 * @return boolean hasKey
+	 */
+	public boolean hasKey(String key) {
+		return data.containsKey(key);
+	}
+	
+	/**
+	 * Removes the value associated with the specified key.
+	 * @param key
+	 */
+	public void remove(String key) {
+		data.remove(key);
 	}
 	
 }
