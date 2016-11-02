@@ -40,7 +40,7 @@ public abstract class CommandExecutor {
 	 * @param guild from which the command was sent
 	 * @param channel from which the command was used
 	 * @param args (arguments)
-	 * @param mentionedUsers, a list of all mentioned users in this message
+	 * @param mentionedUsers a list of all mentioned users in this message
 	 * @return false if the command is not correctly used
 	 */
 	public abstract boolean onCommand(DiscordUser user, Guild guild, MessageChannel channel , String[] args , List<User> mentionedUsers);

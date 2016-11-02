@@ -35,7 +35,7 @@ public final class Command {
 
 	/**
 	 * Returns the permission needed to use this command.
-	 * @return
+	 * @return String permission
 	 */
 	public String getPermission() {
 		return permission;

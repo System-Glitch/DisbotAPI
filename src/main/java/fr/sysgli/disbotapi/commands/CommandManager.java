@@ -87,7 +87,7 @@ public final class CommandManager {
 	 * <p><b><u>Note :</u></b> the prefix can be a String but is limited to <b>16 characters</b>! 
 	 * An IllegalArgumentException is thrown if this limit is exceeded.</p>
 	 * <p><i>The default prefix is "&".</i></p>
-	 * @param prefix, limited to 16 characters
+	 * @param prefix limited to 16 characters
 	 */
 	public void setCommandPrefix(String prefix) {
 		if(prefix.length() > 16)

@@ -153,7 +153,7 @@ public final class UserManager {
 	 * <p>Returns a DiscordUser from it's unique ID. Returns null if doesn't exists or not known.</p>
 	 * <p><u>Note :</u> Each DiscordUser is guild-relative.</p>
 	 * @param guild
-	 * @param id, the unique ID of the user
+	 * @param id the unique ID of the user
 	 * @return DiscordUser user
 	 * @see DiscordUser
 	 */
