@@ -46,24 +46,23 @@ public final class Disbot {
 		
 		try {
 			jda = new JDABuilder().setBotToken(token).setBulkDeleteSplittingEnabled(false).buildBlocking();
+			commandManager = new CommandManager();
+			eventManager = new EventManager(jda);
+			userManager = new UserManager(jda);
+			
+			registerDefaultEvents();
+			registerDefaultCommands();
+			
+			initAutoSave();
+			registerShutdownHook();
+			
+			Logger_.info("Finished loading ! (" + (System.currentTimeMillis() - timeStart) + "ms)");
 		} catch (LoginException e) {
 			Logger_.error("Invalid token.");
 		} catch (IllegalArgumentException | InterruptedException e) {
 			e.printStackTrace();
 			Logger_.log(LogStatus.ERROR, "An error occured while generating client.\n");
 		}
-
-		commandManager = new CommandManager();
-		eventManager = new EventManager(jda);
-		userManager = new UserManager(jda);
-		
-		registerDefaultEvents();
-		registerDefaultCommands();
-		
-		initAutoSave();
-		registerShutdownHook();
-		
-		Logger_.info("Finished loading ! (" + (System.currentTimeMillis() - timeStart) + "ms)");
 	}
 	
 	/**
