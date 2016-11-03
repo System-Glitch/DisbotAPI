@@ -80,6 +80,8 @@ public final class DiscordUser implements Serializable {
 	 * @return boolean hasPermission
 	 */
 	public boolean hasPermission(String permission) {
+		if(permission == null)
+			return true;
 		return permissions.contains(permission);
 	}
 	
