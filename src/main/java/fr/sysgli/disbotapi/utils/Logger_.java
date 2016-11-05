@@ -5,8 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * <p>Log utility that allows to quickly and easliy print log messages with time and status infos.</p>
- * @author Jérémy LAMBERT
+ * <p>Log utility that allows to quickly and easily print log messages with time and status info.</p>
+ * @author Jeremy LAMBERT
  *
  */
 public abstract class Logger_ {

@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * Stores all metadata for a DiscordUser.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  * @see DiscordUser
  *
  */

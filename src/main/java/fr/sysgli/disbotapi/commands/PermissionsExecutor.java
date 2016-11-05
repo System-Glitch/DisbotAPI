@@ -9,6 +9,11 @@ import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.MessageChannel;
 import net.dv8tion.jda.entities.User;
 
+/**
+ * Executor for the built-in permission management command.
+ * @author Jeremy LAMBERT
+ *
+ */
 public class PermissionsExecutor extends CommandExecutor {
 
 	public PermissionsExecutor(Disbot disbot) {

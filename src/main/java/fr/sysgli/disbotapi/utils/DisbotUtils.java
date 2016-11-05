@@ -3,6 +3,11 @@ package fr.sysgli.disbotapi.utils;
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
 
+/**
+ * Some simple tools.
+ * @author Jeremy LAMBERT
+ *
+ */
 public abstract class DisbotUtils {
 	
 	/**

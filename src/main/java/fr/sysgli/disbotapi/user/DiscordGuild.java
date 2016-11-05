@@ -8,7 +8,7 @@ import net.dv8tion.jda.entities.User;
 
 /**
  * Simple container for a Guild and all its users.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  *
  */
 final class DiscordGuild {

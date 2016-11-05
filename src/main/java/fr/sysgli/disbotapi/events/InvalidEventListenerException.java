@@ -2,7 +2,7 @@ package fr.sysgli.disbotapi.events;
 
 /**
  * Exception thrown when there is an attempt to register an invalid class as an event in an EventManager.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  * @see EventManager
  *
  */

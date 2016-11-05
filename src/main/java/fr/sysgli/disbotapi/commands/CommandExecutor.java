@@ -11,7 +11,7 @@ import net.dv8tion.jda.entities.User;
 /**
  * <p>Abstract class modeling every command execution.</p>
  * <p>Each Command needs a CommandExecutor in order to do something when called.</p>
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  *
  */
 public abstract class CommandExecutor {

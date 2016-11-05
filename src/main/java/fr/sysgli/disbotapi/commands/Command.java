@@ -2,7 +2,7 @@ package fr.sysgli.disbotapi.commands;
 
 /**
  * Models every command : its name, the needed permission and the CommandExecutor.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  * @see CommandExecutor
  */
 public final class Command {
@@ -15,7 +15,7 @@ public final class Command {
 
 	/**
 	 * <p>Each command must have a name that will be used to identify it. Specify the name without the command prefix.<br>
-	 * For example, if the command prefix is '&' and the command is meant to be used like this "&command", the returned value will be "command"</p>
+	 * For example, if the command prefix is '&' and the command is meant to be used like this "&command", the name will be "command"</p>
 	 * <p><u>Note :</u> The command name is not case sensitive.</p>
 	 * @param name
 	 */

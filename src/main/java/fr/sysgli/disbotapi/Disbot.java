@@ -19,7 +19,7 @@ import net.dv8tion.jda.entities.User;
 
 /**
  * The main class used to create a bot.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  * @see CommandManager
  * @see EventManager
  * @see UserManager

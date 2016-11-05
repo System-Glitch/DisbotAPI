@@ -10,7 +10,7 @@ import net.dv8tion.jda.hooks.SubscribeEvent;
 
 /**
  * This class manages all events. It allows to register or unregister events dynamically.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  *
  */
 public final class EventManager {

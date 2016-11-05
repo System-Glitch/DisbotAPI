@@ -10,7 +10,7 @@ import net.dv8tion.jda.entities.User;
 /**
  * Wraps the classic JDA user with metadata.<br>
  * Each DiscordUser is Guild-relative.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  * @see DiscordGuild
  *
  */

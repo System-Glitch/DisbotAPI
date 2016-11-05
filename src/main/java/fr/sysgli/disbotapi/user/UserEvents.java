@@ -12,7 +12,7 @@ import net.dv8tion.jda.hooks.ListenerAdapter;
 
 /**
  * Handle user joins and leave.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  *
  */
 public class UserEvents extends ListenerAdapter {

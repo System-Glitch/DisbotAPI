@@ -14,7 +14,7 @@ import net.dv8tion.jda.hooks.ListenerAdapter;
 
 /**
  * Handle commands and redistribute to executors.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  *
  */
 public class CommandEvent extends ListenerAdapter {

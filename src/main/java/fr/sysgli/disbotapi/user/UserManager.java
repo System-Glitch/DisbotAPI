@@ -18,7 +18,7 @@ import net.dv8tion.jda.entities.User;
 
 /**
  * This class manages users wrappers DiscordUser.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  * @see DiscordUser
  *
  */

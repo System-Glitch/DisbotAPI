@@ -8,7 +8,7 @@ import fr.sysgli.disbotapi.utils.Logger_;
 
 /**
  * This class manages all commands. It allows to register, unregister commands or change the command prefix dynamically.
- * @author Jérémy LAMBERT
+ * @author Jeremy LAMBERT
  *
  */
 public final class CommandManager {
