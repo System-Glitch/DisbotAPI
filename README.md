@@ -1,5 +1,5 @@
 # DisbotAPI
-Additional layer on the JDA Discord API allowing to create bots extremely easily.
+DisbotAPI is an additional layer on the JDA Discord API allowing to create bots extremely easily. It features some extras like a full command system with permissions and a user metadata storage.
 
 ##Installation
 
