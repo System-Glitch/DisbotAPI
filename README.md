@@ -14,5 +14,4 @@ See the [wiki](https://github.com/ImAFlyingPancake/DisbotAPI/wiki) for a complet
 
 ##TODO
 
-- Finish wiki
 - Locales for multi-language support
