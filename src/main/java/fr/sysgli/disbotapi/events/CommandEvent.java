@@ -35,7 +35,7 @@ public class CommandEvent extends ListenerAdapter {
 			int index = message.indexOf(" ");
 			if(index <= 0)
 				index = message.length();
-			String commandName = message.substring(1 , index);
+			String commandName = message.substring(bot.getCommandManager().getCommandPrefix().length() , index);
 
 			Command command = bot.getCommandManager().getCommand(commandName);				
 
