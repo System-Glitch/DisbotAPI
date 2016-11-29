@@ -35,6 +35,7 @@ public final class Disbot {
 	private EventManager eventManager;
 	private UserManager userManager;
 	private Thread autoSaveThread;
+	private Command permissionCommand;
 	
 	private boolean shuttingDown;
 
@@ -97,11 +98,11 @@ public final class Disbot {
 
 	private void registerDefaultCommands() {
 		Logger_.info("Registering default permission management commands...");
-		Command command = new Command("perm");
-		command.setPermission("permissions");
-		command.setUsageMessage("**Utilisation :** " + commandManager.getCommandPrefix() + "perm [add|remove|clear] [@user] [permission]");
-		command.setExecutor(new PermissionsExecutor(this));
-		commandManager.registerCommand(command);
+		permissionCommand = new Command("perm");
+		permissionCommand.setPermission("permissions");
+		permissionCommand.setUsageMessage("**Utilisation :** " + commandManager.getCommandPrefix() + "perm [add|remove|clear] [@user] [permission]");
+		permissionCommand.setExecutor(new PermissionsExecutor(this));
+		commandManager.registerCommand(permissionCommand);
 	}
 
 	private void initAutoSave() {
@@ -182,5 +183,14 @@ public final class Disbot {
 	 */
 	public UserManager getUserManager() {
 		return userManager;
+	}
+	
+	/**
+	 * Returns the instance of the built-in permission command in case you want to modify it.
+	 * @return Command permissionCommand
+	 * @see Command
+	 */
+	public Command getPermissionCommand() {
+		return permissionCommand;
 	}
 }

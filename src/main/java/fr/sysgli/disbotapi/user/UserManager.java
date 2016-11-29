@@ -140,8 +140,8 @@ public final class UserManager {
 	/**
 	 * <p>Returns the DiscordUser associated with the specified JDA User. Returns null if doesn't exists or not known.</p>
 	 * <p><u>Note :</u> Each DiscordUser is guild-relative.</p>
-	 * @param guild
-	 * @param user
+	 * @param Guild guild
+	 * @param User user
 	 * @return DiscordUser discordUser
 	 * @see DiscordUser
 	 */
@@ -152,8 +152,8 @@ public final class UserManager {
 	/**
 	 * <p>Returns a DiscordUser from it's unique ID. Returns null if doesn't exists or not known.</p>
 	 * <p><u>Note :</u> Each DiscordUser is guild-relative.</p>
-	 * @param guild
-	 * @param id the unique ID of the user
+	 * @param Guild guild
+	 * @param int id the unique ID of the user
 	 * @return DiscordUser user
 	 * @see DiscordUser
 	 */
@@ -164,7 +164,7 @@ public final class UserManager {
 	/**
 	 * <p>Returns all known users in a guild. Returns null if the guild is unknown.</p>
 	 * <p><u>Note :</u> Each DiscordUser is guild-relative.</p>
-	 * @param guild
+	 * @param Guild guild
 	 * @return Collection<DiscordUser> users
 	 */
 	public Collection<DiscordUser> getUsers(Guild guild) {

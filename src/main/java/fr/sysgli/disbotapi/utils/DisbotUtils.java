@@ -1,5 +1,6 @@
 package fr.sysgli.disbotapi.utils;
 
+import fr.sysgli.disbotapi.user.DiscordUser;
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.entities.User;
 
@@ -12,8 +13,8 @@ public abstract class DisbotUtils {
 	
 	/**
 	 * Returns the nickname of a user in the chosen guild.<br>Returns the real username if has no nickame.
-	 * @param guild
-	 * @param user
+	 * @param Guild guild
+	 * @param User user
 	 * @return String name
 	 */
 	public static final String getNameForUser(Guild guild , User user) {
@@ -22,6 +23,16 @@ public abstract class DisbotUtils {
 			return user.getUsername();
 		else
 			return nick;
+	}
+	
+	/**
+	 *Returns the nickname of a DiscordUser.<br>Returns the real username if has no nickame.
+	 * @param DiscordUser user
+	 * @return String name
+	 * @see DiscordUser
+	 */
+	public static final String getNameForUser(DiscordUser user) {
+		return getNameForUser(user.getGuild().getGuild() , user.getUser());
 	}
 
 }

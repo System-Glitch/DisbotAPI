@@ -21,11 +21,17 @@ public final class CommandManager {
 	private HashMap<String , Command> commands;
 	private String commandPrefix;
 	private String unknownCommandMessage;
+	private boolean printUnknownCommandMessage;
+	private boolean printUsageMessage;
+	private boolean printPermissionMessage;
 	
 	public CommandManager() {
 		commands = new HashMap<String , Command>();
 		commandPrefix = DEFAULT_COMMAND_PREFIX;
 		unknownCommandMessage = DEFAULT_UNKNOWN_COMMAND_MESSAGE;
+		printUnknownCommandMessage = true;
+		printUsageMessage = true;
+		printPermissionMessage = true;
 	}
 	
 	/**
@@ -109,6 +115,54 @@ public final class CommandManager {
 	 */
 	public String getUnknownCommandMessage() {
 		return unknownCommandMessage;
+	}
+	
+	/**
+	 * Sets if the unknown command message should be displayed when an unknown command is used.
+	 * @param boolean b
+	 */
+	public void setPrintUnknownCommandMessage(boolean b) {
+		this.printUnknownCommandMessage = b;
+	}
+	
+	/**
+	 * Returns true if the usage message should be displayed when an unknown command is used.
+	 * @return boolean printUnknownCommandMessage
+	 */
+	public boolean isPrintingUnknownCommandMessage() {
+		return printUnknownCommandMessage;
+	}
+	
+	/**
+	 * Sets if the usage message should be displayed when a command is not correctly used.
+	 * @param boolean b
+	 */
+	public void setPrintUsageMessage(boolean b) {
+		this.printUsageMessage = b;
+	}
+	
+	/**
+	 * Returns true if the usage message should be displayed when a command is not correctly used.
+	 * @return boolean printUsageMessage
+	 */
+	public boolean isPrintingUsageMessage() {
+		return printUsageMessage;
+	}
+	
+	/**
+	 * Sets if the permission message should be displayed when a command is used by a user not having the permission.
+	 * @param boolean b
+	 */
+	public void setPrintPermissionMessage(boolean b) {
+		this.printPermissionMessage = b;
+	}
+	
+	/**
+	 * Returns true if the permission message should be displayed when a command is used by a user not having the permission.
+	 * @return boolean printPermissionMessage
+	 */
+	public boolean isPrintingPermissionMessage() {
+		return printPermissionMessage;
 	}
 	
 }

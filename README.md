@@ -11,7 +11,3 @@ DisbotAPI is an additional layer on the JDA Discord API allowing to create bots 
 ##Usage
 
 See the [wiki](https://github.com/ImAFlyingPancake/DisbotAPI/wiki) for a complete tutorial.
-
-##TODO
-
-- Locales for multi-language support

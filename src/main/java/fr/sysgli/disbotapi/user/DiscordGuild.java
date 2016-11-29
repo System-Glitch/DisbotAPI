@@ -11,7 +11,7 @@ import net.dv8tion.jda.entities.User;
  * @author Jeremy LAMBERT
  *
  */
-final class DiscordGuild {
+public final class DiscordGuild {
 	
 	private Guild guild;
 	private ConcurrentHashMap<String , DiscordUser> users;
@@ -23,7 +23,11 @@ final class DiscordGuild {
 		users = new ConcurrentHashMap<String , DiscordUser>();
 	}
 	
-	Guild getGuild() {
+	/**
+	 * Returns the JDA Guild associated with this DiscordGuild instance.
+	 * @return Guild guild
+	 */
+	public Guild getGuild() {
 		return guild;
 	}
 	
